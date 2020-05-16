@@ -13,12 +13,7 @@ export const MainContentWrapper = styled.div`
         width: 31.3333%;
         float: left;
         margin: 1%;
-    }
-
-    .img-container {
-        background-image: url('https://i.ytimg.com/vi/GzqvKQZ-efg/hqdefault.jpg');
-        width: 100%;
-        height: 300px;
+        cursor: pointer;
     }
 
     /*  css reset
