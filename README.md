@@ -1,2 +1,2 @@
-# YoutubeSearchMan
-call youtube api to get video search
+# YoutubeSearcher
+Use react to create a simple youtube search page
