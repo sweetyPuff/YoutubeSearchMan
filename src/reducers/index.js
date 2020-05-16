@@ -3,6 +3,7 @@ const initialState = {
     loading: false,
     errorMsg: '',
     nextPageToken: '',
+    totalPage: 0
 }
 
 export default function todosReducer(state = initialState, action) {
@@ -17,6 +18,7 @@ export default function todosReducer(state = initialState, action) {
             ...state,
             videoList: action.payload.items.filter(item=>item.id.channelId === undefined),
             nextPageToken: action.payload.nextPageToken,
+            totalPage: Math.ceil(action.payload.pageInfo.totalResults / action.payload.pageInfo.resultsPerPage),
             loading: false,
         };
       case 'GET_VIDEO_FAILED':

@@ -2,6 +2,11 @@ import config from '../config';
 import axios from 'axios';
 
 const searchListOfVideo = (query, nextPageToken) => (dispatch) => {
+    if (query === '') {
+      dispatch(getVideoListFailed("Failed"));
+      return;
+    }
+
     dispatch(waitGetVideo());
     let url = `${config.googleUrl}?part=snippet&key=${config.apiKey}&q=${query}&maxResults=${config.maxResults}`;
     if (nextPageToken !== '')
