@@ -6,9 +6,11 @@ let VideosTemplate = ({ videoList, loading }) => {
     let videosRender = '';
     if(videoList !== null && videoList.length > 0){
        videosRender = videoList.map((video, index) =>(
-       <div key={`${index}`}>
-          <h2>{`${video.snippet.title}`}</h2>
-       </div>
+       <li className="content-item" key={`${index}`}>
+          <div className="img-container"></div>
+          <div className="title">{`${video.snippet.title.replace('&amp;', '&')}`}</div>
+          <div className="author">{`${video.snippet.channelTitle.replace('&amp;', '&')}`}</div>
+       </li>
       )
      )
     }
@@ -18,7 +20,9 @@ let VideosTemplate = ({ videoList, loading }) => {
 
   return (
    <MainContentWrapper>
-     {videosRender}
+     <ul className="content-list">
+      {videosRender}
+     </ul>
    </MainContentWrapper>
   )
 }
