@@ -5,7 +5,8 @@ import SearchBar from './SearchBar';
 
 const style = {
   'maxWidth': '1680px',
-  'margin': '0 auto'
+  'margin': '0 auto',
+  'fontFamily': 'Microsoft JhengHei'
 }
 
 function App() {

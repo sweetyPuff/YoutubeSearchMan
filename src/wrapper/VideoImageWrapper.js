@@ -7,4 +7,14 @@ export const VideoImageWrapper = styled.div`
     width: 100%;
     height: 360px;
 }
+
+.title {
+    margin: 3% 0;
+    font-size: 1.6rem;
+}
+
+.author {
+    color: gray;
+}
+
 `;

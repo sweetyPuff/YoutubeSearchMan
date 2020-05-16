@@ -10,10 +10,12 @@ export const MainContentWrapper = styled.div`
     }
 
     .content-item {
-        width: 31.3333%;
+        width: 29.3333%;
         float: left;
         margin: 1%;
         cursor: pointer;
+        box-shadow: 0px 3px 5px #D3D3D3;
+        padding: 1%;
     }
 
     /*  css reset
