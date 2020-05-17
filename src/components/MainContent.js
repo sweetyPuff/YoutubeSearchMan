@@ -8,11 +8,11 @@ const videoOnClick = (vid) => {
     window.open(`https://www.youtube.com/watch?v=${vid}`);
 }
 
-let VideosTemplate = ({ videoList, loading }) => {
+let VideosTemplate = ({ videoList, loading, totalPage }) => {
     let videosRender = '';
     if(videoList !== null && videoList.length > 0){
        videosRender = videoList.map((video, index) =>(
-       <li className="content-item" key={`${index}`} onClick={()=>videoOnClick(video.id.videoId)}>
+       <li key={`${index}`} onClick={()=>videoOnClick(video.id.videoId)}>
           <VideoImage video={video}></VideoImage>
        </li>
       )
@@ -24,16 +24,19 @@ let VideosTemplate = ({ videoList, loading }) => {
 
   return (
    <MainContentWrapper>
-      <ul className="content-list">
-          {videosRender}
-      </ul>
-      <Pagination totalPage={15} activePage={7} />
+     <div className="content-wrapper">
+        <ul className="content-list">
+            {videosRender}
+        </ul>
+     </div>
+      <Pagination totalPage={totalPage} activePage={1} />
    </MainContentWrapper>
   )
 }
 const mapStateToProps = (state) => ({
   videoList: state.videoList,
-  loading: state.loading
+  loading: state.loading,
+  totalPage: state.totalPage
 })
 
 VideosTemplate = connect(mapStateToProps,null)(VideosTemplate)
