@@ -8,7 +8,7 @@ export const PaginationWrapper = styled.div`
     list-style: none;
     z-index: -2;
     width: 50%;
-    height: 35px;
+    height: 45px;
 
     .sr-only {
         display: none;
@@ -42,13 +42,13 @@ export const PaginationWrapper = styled.div`
         position: inherit;
         margin-left: 2px;
         font-size: 25px;
-        padding: 0 10px;
+        padding: 8px 20px;
     }
 
     @media (max-width: 768px) {
         .page-link {
             font-size: 16px !important;
-            padding: 0 7px;
+            padding: 4px 10px;
         }
     }
 `;
