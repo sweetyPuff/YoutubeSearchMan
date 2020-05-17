@@ -1,22 +1,26 @@
 import styled from 'styled-components';
 
 export const MainContentWrapper = styled.div`
-
-    margin-top: 5%;
     margin: 0 auto;
     margin-bottom: 5%;
+    margin-top: 3%;
     content: normal;
+    width: 100%;
+    overflow: hidden;
 
-    .content-list ul {
+    .content-wrapper, .content-list ul {
         display: inline-block;
     }
 
-    ul {
+    .content-wrapper {
+      width: 100%;
+      & > ul {
         list-style: none;
         padding: 0;
+      }
     }
 
-    .content-item {
+    .content-wrapper li {
         width: 29.3333%;
         float: left;
         margin: 1%;
@@ -25,8 +29,21 @@ export const MainContentWrapper = styled.div`
         padding: 1%;
     }
 
-    @media(max-width: 768px) {
-        .content-item {
+    @media (max-width: 768px) {
+        .content-wrapper li {
+            width: 42% !important;
+            margin: 2%;
+            padding: 2%;
         }
     }
+
+    @media (max-width: 576px) {
+        .content-wrapper li {
+            width: 90% !important;
+            margin: 2%;
+            padding: 2%;
+
+        }
+    }
+
 `;

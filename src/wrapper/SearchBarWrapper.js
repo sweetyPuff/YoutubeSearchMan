@@ -24,9 +24,29 @@ export const SearchBarWrapper = styled.div`
         background: transparent;
         border-bottom:1px solid gray;
         padding-bottom: 5px;
+        &:focus {
+            outline:none;
+        }
     }
-    input:focus{
-        outline:none;
+
+    @media (max-width: 768px) {
+        input {
+            font-size:20px !important;
+        }
+        .input-region img {
+            width: 32px !important;
+            height: 32px !important;
+        }
+    }
+
+    @media (max-width: 576px) {
+        input {
+            font-size:16px !important;
+        }
+        .input-region img {
+            width: 32px !important;
+            height: 32px !important;
+        }
     }
 
     img {

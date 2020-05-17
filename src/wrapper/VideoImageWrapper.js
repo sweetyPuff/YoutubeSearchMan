@@ -3,9 +3,12 @@ import styled from 'styled-components';
 export const VideoImageWrapper = styled.div`
 
 .img-container {
-    background-image: url(${props => props.img});
     width: 100%;
-    height: 360px;
+    height: 100%;
+}
+
+img {
+    width: 100%;
 }
 
 .title {
@@ -21,6 +24,16 @@ export const VideoImageWrapper = styled.div`
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 16px !important;
+    }
+}
+
+@media (max-width: 576px) {
+
 }
 
 `;

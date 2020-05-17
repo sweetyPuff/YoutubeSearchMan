@@ -2,12 +2,13 @@ import styled from 'styled-components';
 
 export const PaginationWrapper = styled.div`
     margin: 0 auto;
-    margin-top: 3%;
+    margin-top: 5%;
     display: flex;
     justify-content: center;
     list-style: none;
     z-index: -2;
     width: 50%;
+    height: 35px;
 
     .sr-only {
         display: none;
@@ -42,6 +43,13 @@ export const PaginationWrapper = styled.div`
         margin-left: 2px;
         font-size: 25px;
         padding: 0 10px;
+    }
+
+    @media (max-width: 768px) {
+        .page-link {
+            font-size: 16px !important;
+            padding: 0 7px;
+        }
     }
 `;
 
