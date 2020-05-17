@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { MainContentWrapper } from '../wrapper/MainContentWrapper';
 import VideoImage from './VideoImage';
+import Pagination from './Pagination';
 
 const videoOnClick = (vid) => {
     window.open(`https://www.youtube.com/watch?v=${vid}`);
@@ -23,9 +24,10 @@ let VideosTemplate = ({ videoList, loading }) => {
 
   return (
    <MainContentWrapper>
-     <ul className="content-list">
-      {videosRender}
-     </ul>
+      <ul className="content-list">
+          {videosRender}
+      </ul>
+      <Pagination totalPage={15} activePage={7} />
    </MainContentWrapper>
   )
 }

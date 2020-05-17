@@ -1,5 +1,6 @@
 import React, {useState, useCallback} from 'react';
 import Pagination from 'react-bootstrap/Pagination';
+import { PaginationWrapper } from '../wrapper/PaginationWrapper';
 
 export default (props) => {
     const [data, setData] = useState(props.data);
@@ -30,12 +31,15 @@ export default (props) => {
     }
 
     return (
-        <div className="page_change">
-            {startNum >= 2 && <Pagination.Item id={1} onClick={handleClick}>1</Pagination.Item>}
-            {startNum >= 3 && <Pagination.Ellipsis />}
-            <Pagination>{items}</Pagination>
-            {endNum !== totalPage && <Pagination.Ellipsis />}
-            {endNum !== totalPage && <Pagination.Item id={totalPage} onClick={handleClick}>{totalPage}</Pagination.Item>}
-        </div>
+        <PaginationWrapper>
+            <Pagination>
+                {startNum >= 2 && <Pagination.Item id={1} onClick={handleClick}>1</Pagination.Item>}
+                {startNum >= 3 && <Pagination.Ellipsis/>}
+                {items}
+                {endNum !== totalPage && <Pagination.Ellipsis />}
+                {endNum !== totalPage && <Pagination.Item id={totalPage} onClick={handleClick}>{totalPage}</Pagination.Item>}
+            </Pagination>
+            
+        </PaginationWrapper>
     )
 }

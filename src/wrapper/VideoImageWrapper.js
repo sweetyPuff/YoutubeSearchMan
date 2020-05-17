@@ -10,11 +10,17 @@ export const VideoImageWrapper = styled.div`
 
 .title {
     margin: 3% 0;
-    font-size: 1.6rem;
+    font-size: 25px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .author {
     color: gray;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 `;

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux'
 import { SearchBarWrapper } from '../wrapper/SearchBarWrapper';
 import searchListOfVideo from '../actions/action';
+import searchIcon from '../assets/search.svg';
 
 let SearchBar = ({nextPageToken, getVideos }) => {
     const [query, setQuery] = useState('');
@@ -12,8 +13,10 @@ let SearchBar = ({nextPageToken, getVideos }) => {
 
     return (
         <SearchBarWrapper>
-            <input type="text" onChange={evt => (onChangeInput(evt))}/>
-            <button onClick={() => { getVideos(query, nextPageToken) }} style={{width:'100px',height:'50px'}}> </button>
+            <div className="input-region">
+                <input type="text" size="50" onChange={evt => (onChangeInput(evt))} placeholder="Search Here" />
+                <img src={searchIcon} onClick={() => { getVideos(query, nextPageToken) }} style={{width:'100px',height:'50px'}} alt=""/>
+            </div>
         </SearchBarWrapper>
     )
 };
