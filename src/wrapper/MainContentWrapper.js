@@ -59,6 +59,18 @@ export const MainContentWrapper = styled.div`
         }
     }
 
+    .errorMsg {
+        width: 20%;
+        height: 10%;
+        background-color: rgba(45,182,124);
+        border-radius: 10px;
+        line-height: 100px;
+        text-align: center;
+        &:hover {
+            background-color: rgba(45,182,124, 0.5);
+        }
+    }
+
     @keyframes spin_keyframes {
         from {
             transform:rotate(0deg);

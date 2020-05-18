@@ -1,15 +1,12 @@
-import React, {useState, useCallback} from 'react';
+import React, { useCallback } from 'react';
 import Pagination from 'react-bootstrap/Pagination';
 import { PaginationWrapper } from '../wrapper/PaginationWrapper';
 
 export default (props) => {
-    const [data, setData] = useState(props.data);
     const handleClick = useCallback((event) => {
-        const newData = data;
-        newData.page = parseInt(event.target.id);
-        setData(newData);
-        props.onClickFunction(props.path, data)
-    }, [data, props])
+        props.setActivePage(parseInt(event.target.id));
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }, [props])
 
     const active = props.activePage;
     const totalPage = props.totalPage;
@@ -39,7 +36,6 @@ export default (props) => {
                 {endNum !== totalPage && <Pagination.Ellipsis />}
                 {endNum !== totalPage && <Pagination.Item id={totalPage} onClick={handleClick}>{totalPage}</Pagination.Item>}
             </Pagination>
-            
         </PaginationWrapper>
     )
 }

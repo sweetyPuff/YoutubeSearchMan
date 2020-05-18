@@ -1,8 +1,9 @@
+import config from '../config';
+
 const initialState = {
     videoList: null,
     loading: false,
     errorMsg: '',
-    nextPageToken: '',
     totalPage: 0
 }
 
@@ -12,19 +13,20 @@ export default function todosReducer(state = initialState, action) {
         return {
             ...state,
             loading: true,
+            errorMsg: ''
         };
       case 'GET_VIDEO_SUCCESS':
         return {
             ...state,
             videoList: action.payload.items.filter(item=>item.id.channelId === undefined),
-            nextPageToken: action.payload.nextPageToken,
-            totalPage: Math.ceil(action.payload.pageInfo.totalResults / action.payload.pageInfo.resultsPerPage),
+            totalPage: Math.ceil(config.maxResults / config.videosPerPage),
             loading: false,
+            errorMsg: ''
         };
       case 'GET_VIDEO_FAILED':
         return {
             ...state,
-            errorMsg: action.payload,
+            errorMsg: action.payload.errorMsg,
             loading: false
         };
       default:

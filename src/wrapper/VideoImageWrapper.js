@@ -32,8 +32,4 @@ img {
     }
 }
 
-@media (max-width: 576px) {
-
-}
-
 `;
