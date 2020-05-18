@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { MainContentWrapper } from '../wrapper/MainContentWrapper';
 import VideoImage from './VideoImage';
 import Pagination from './Pagination';
+import loadingIcon from '../assets/loading.png';
 
 const videoOnClick = (vid) => {
     window.open(`https://www.youtube.com/watch?v=${vid}`);
@@ -18,8 +19,18 @@ let VideosTemplate = ({ videoList, loading, totalPage }) => {
       )
      )
     }
+
+
+  const Loading = () => {
    if(loading){
-    videosRender = <h3 className="loading-indicator">Loading ...</h3>
+      console.log(loading);
+      return (
+        <div className="loading-img-cotainer"><img src={loadingIcon} alt=""/></div>
+      )
+   }
+   else {
+      return null;
+   }
   }
 
   return (
@@ -29,6 +40,7 @@ let VideosTemplate = ({ videoList, loading, totalPage }) => {
             {videosRender}
         </ul>
      </div>
+     <Loading />
       <Pagination totalPage={totalPage} activePage={1} />
    </MainContentWrapper>
   )

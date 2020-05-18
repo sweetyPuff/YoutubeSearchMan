@@ -46,4 +46,40 @@ export const MainContentWrapper = styled.div`
         }
     }
 
+    .loading-img-cotainer {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        text-align: center;
+        & img {
+            width: 100px;
+            height: 100px;
+            margin-top: calc(40%);
+            animation: spin_keyframes 0.7s infinite;
+        }
+    }
+
+    @keyframes spin_keyframes {
+        from {
+            transform:rotate(0deg);
+        }
+        to {
+            transform:rotate(360deg);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .loading-img-cotainer img {
+            width: 80px !important;
+            height: 80px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .loading-img-cotainer img {
+            width: 40px !important;
+            height: 40px;
+        }
+    }
+
 `;
