@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { MainContentWrapper } from '../wrapper/MainContentWrapper';
 import VideoImage from './VideoImage';
+import UmImage from '../assets/cry.png';
 import Pagination from './Pagination';
 import loadingIcon from '../assets/loading.png';
 import config from '../config';
@@ -34,13 +35,16 @@ let VideosTemplate = ({ videoList, loading, totalPage, errorMsg, activePage, set
    const Loading = () => {
       if (loading){
          return (
-         <div className="loading-img-cotainer"><img src={loadingIcon} alt=""/></div>
+         <div className="alert-msg-img-cotainer"><img className="loading-img" src={loadingIcon} alt=""/></div>
          )
       }
       else {
          if (errorMsg !== '') {
             return (
-               <div className="loading-img-cotainer"><span>{errorMsg}</span></div>
+               <div className="alert-msg-img-cotainer">
+                  <img className="error-img" src={UmImage} alt=""/>
+                  <div className="error-msg">Sorry...Something went wrong</div>
+               </div>
             )
          }
          else

@@ -22,6 +22,7 @@ export default function todosReducer(state = initialState, action) {
         return {
             ...state,
             errorMsg: action.payload.errorMsg,
+            videoList: null,
             loading: false
         };
       case 'SET_ACTIVE_PAGE':
