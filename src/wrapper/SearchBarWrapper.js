@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const SearchBarWrapper = styled.div`
     max-width: 100%;
     background-color: rgba(45,182,124, 0.5);
-    height: 100px;
+    height: 80px;
     line-height: 100px;
 
     .input-region {
@@ -15,11 +15,18 @@ export const SearchBarWrapper = styled.div`
         float: left;
     }
 
+    .search-icon {
+        width: 40px;
+        height: 40px;
+        margin-top: 8px;
+        cursor: pointer;
+    }
+
     input {
         width: 50%;
         color: gray;
         border: none;
-        font-size: 25px;
+        font-size: 20px;
         font-weight:bolder;
         background: transparent;
         border-bottom:1px solid gray;
@@ -31,27 +38,22 @@ export const SearchBarWrapper = styled.div`
 
     @media (max-width: 768px) {
         input {
-            font-size:20px !important;
+            font-size:20px ;
         }
-        .input-region img {
-            width: 32px !important;
-            height: 32px !important;
+        .search-icon {
+            width: 32px ;
+            height: 32px ;
         }
     }
 
     @media (max-width: 576px) {
         input {
-            font-size:16px !important;
+            font-size:16px ;
         }
-        .input-region img {
-            width: 32px !important;
-            height: 32px !important;
+        .search-icon {
+            width: 32px ;
+            height: 32px ;
         }
-    }
-
-    img {
-        margin-top: 16px;
-        cursor: pointer;
     }
 
 `;

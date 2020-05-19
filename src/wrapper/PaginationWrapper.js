@@ -41,15 +41,15 @@ export const PaginationWrapper = styled.div`
         color: #545454;
         position: inherit;
         margin-left: 2px;
-        font-size: 25px;
-        padding: 8px 20px;
+        font-size: 20px;
+        padding: 4px 12px;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 576px) {
         margin-top: 10%;
         .page-link {
-            font-size: 18px !important;
-            padding: 4px 10px;
+            font-size: 18px ;
+            padding: 2px 8px;
         }
     }
 `;

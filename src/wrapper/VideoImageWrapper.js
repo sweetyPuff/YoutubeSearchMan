@@ -13,7 +13,7 @@ img {
 
 .title {
     margin: 3% 0;
-    font-size: 25px;
+    font-size: 20px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -28,7 +28,7 @@ img {
 
 @media (max-width: 768px) {
     .title {
-        font-size: 16px !important;
+        font-size: 16px ;
     }
 }
 

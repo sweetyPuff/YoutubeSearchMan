@@ -32,7 +32,7 @@ export const MainContentWrapper = styled.div`
     @media (max-width: 768px) {
         margin-top: 10%;
         .content-wrapper li {
-            width: 42% !important;
+            width: 42% ;
             margin: 2%;
             padding: 2%;
         }
@@ -40,7 +40,7 @@ export const MainContentWrapper = styled.div`
 
     @media (max-width: 576px) {
         .content-wrapper li {
-            width: 90% !important;
+            width: 90% ;
             margin: 2%;
             padding: 2%;
 
@@ -51,8 +51,8 @@ export const MainContentWrapper = styled.div`
         text-align: center;
         padding: 10px 0;
         .loading-img {
-            width: 100px;
-            height: 100px;
+            width: 60px;
+            height: 60px;
             margin-top: calc(23vh);
             animation: spin_keyframes 0.7s infinite;
         }
@@ -63,7 +63,7 @@ export const MainContentWrapper = styled.div`
             margin-top: calc(23vh);
         }
         .error-msg {
-            font-size: 25px;
+            font-size: 20px;
         }
     }
 
@@ -79,11 +79,11 @@ export const MainContentWrapper = styled.div`
     @media (max-width: 768px) {
         .alert-msg-img-cotainer {
             .loading-img {
-                width: 80px !important;
+                width: 80px ;
                 height: 80px;
             }
             .error-img {
-                width: 100px !important;
+                width: 100px ;
                 height: 100px;
             }
             .error-msg {
@@ -95,11 +95,11 @@ export const MainContentWrapper = styled.div`
     @media (max-width: 576px) {
         .alert-msg-img-cotainer {
             .loading-img {
-                width: 60px !important;
+                width: 60px ;
                 height: 60px;
             }
             .error-img {
-                width: 60px !important;
+                width: 60px ;
                 height: 60px;
             }
             .error-msg {
