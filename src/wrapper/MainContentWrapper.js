@@ -48,10 +48,9 @@ export const MainContentWrapper = styled.div`
     }
 
     .loading-img-cotainer {
-        width: 100%;
-        height: 100%;
+        top: 50%;
+        left: 50%;
         position: fixed;
-        text-align: center;
         & img {
             width: 100px;
             height: 100px;
