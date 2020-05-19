@@ -15,7 +15,8 @@ export default function todosReducer(state = initialState, action) {
             videoList: action.payload.items.filter(item=>item.id.channelId === undefined),
             totalPage: Math.ceil(config.maxResults / config.videosPerPage),
             loading: false,
-            errorMsg: ''
+            errorMsg: '',
+            activePage: 1
         };
       case 'GET_VIDEO_FAILED':
         return {
@@ -23,6 +24,11 @@ export default function todosReducer(state = initialState, action) {
             errorMsg: action.payload.errorMsg,
             loading: false
         };
+      case 'SET_ACTIVE_PAGE':
+        return {
+          ...state,
+          activePage: action.payload.activePage
+        }
       default:
         return state;
     }

@@ -1,7 +1,7 @@
 import config from '../config';
 import axios from 'axios';
 
-const searchListOfVideo = (query) => (dispatch) => {
+export const searchListOfVideo = (query) => (dispatch) => {
     if (query === '') {
       dispatch(getVideoListFailed("Please input your text"));
       return;
@@ -24,22 +24,27 @@ const searchListOfVideo = (query) => (dispatch) => {
     })
   };
 
-  const waitGetVideo = () => ({
+  export const waitGetVideo = () => ({
       type: 'WAITING_GET_VIDEO'
   })
 
-  const getVideoListSuccess = res => ({
+  export const getVideoListSuccess = res => ({
     type: 'GET_VIDEO_SUCCESS',
     payload: {
       ...res
     }
   });
 
-  const getVideoListFailed = errorMsg => ({
+  export const getVideoListFailed = errorMsg => ({
     type: 'GET_VIDEO_FAILED',
     payload: {
       errorMsg
     }
   });
 
-  export default searchListOfVideo;
+  export const setActivePage = activePage => ({
+    type: 'SET_ACTIVE_PAGE',
+    payload: {
+      activePage
+    }
+  });
