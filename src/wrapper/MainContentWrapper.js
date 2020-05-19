@@ -30,6 +30,7 @@ export const MainContentWrapper = styled.div`
     }
 
     @media (max-width: 768px) {
+        margin-top: 10%;
         .content-wrapper li {
             width: 42% !important;
             margin: 2%;

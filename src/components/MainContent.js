@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux'
 import { MainContentWrapper } from '../wrapper/MainContentWrapper';
 import VideoImage from './VideoImage';
 import Pagination from './Pagination';
 import loadingIcon from '../assets/loading.png';
 import config from '../config';
+import { setActivePage } from '../store/action';
 
 const videoOnClick = (vid) => {
     window.open(`https://www.youtube.com/watch?v=${vid}`);
@@ -19,10 +20,9 @@ const getResultPerPage = (list, activePage) => {
    return result;
 }
 
-let VideosTemplate = ({ videoList, loading, totalPage, errorMsg }) => {
-   const [activePage, setActivePage] = useState(1);
+let VideosTemplate = ({ videoList, loading, totalPage, errorMsg, activePage, setActivePage }) => {
    let videosRender = '';
-   if(videoList !== null && videoList.length > 0){
+   if(!loading && videoList !== null && videoList.length > 0){
       videosRender = getResultPerPage(videoList, activePage).map((video, index) =>(
          <li key={`${index}`} onClick={()=>videoOnClick(video.id.videoId)}>
             <VideoImage video={video}></VideoImage>
@@ -31,21 +31,28 @@ let VideosTemplate = ({ videoList, loading, totalPage, errorMsg }) => {
    }
 
 
-  const Loading = () => {
-   if(loading){
-      return (
-        <div className="loading-img-cotainer"><img src={loadingIcon} alt=""/></div>
-      )
-   }
-   else {
-      if (errorMsg !== '') {
+   const Loading = () => {
+      if (loading){
          return (
-            <div className="loading-img-cotainer"><span>{errorMsg}</span></div>
+         <div className="loading-img-cotainer"><img src={loadingIcon} alt=""/></div>
          )
       }
-      else
-        return null;
-   }
+      else {
+         if (errorMsg !== '') {
+            return (
+               <div className="loading-img-cotainer"><span>{errorMsg}</span></div>
+            )
+         }
+         else
+         return null;
+      }
+  }
+
+  const PageinationControl = () => {
+     if (!loading && videoList !== null && videoList.length > 0) 
+       return <Pagination totalPage={totalPage} activePage={activePage} setActivePage={setActivePage} />
+     else
+       return null;
   }
 
   return (
@@ -56,16 +63,22 @@ let VideosTemplate = ({ videoList, loading, totalPage, errorMsg }) => {
          </ul>
       </div>
       <Loading />
-      <Pagination totalPage={totalPage} activePage={activePage} setActivePage={setActivePage} />
+      <PageinationControl />
    </MainContentWrapper>
   )
 }
+
 const mapStateToProps = (state) => ({
   videoList: state.videoList,
   loading: state.loading,
   totalPage: state.totalPage,
-  errorMsg: state.errorMsg
+  errorMsg: state.errorMsg,
+  activePage: state.activePage
 })
 
-VideosTemplate = connect(mapStateToProps, null)(VideosTemplate)
+const mapDispatchToProps = {
+   setActivePage: setActivePage
+}
+
+VideosTemplate = connect(mapStateToProps, mapDispatchToProps)(VideosTemplate)
 export default VideosTemplate;

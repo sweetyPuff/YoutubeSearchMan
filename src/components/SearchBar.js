@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux'
 import { SearchBarWrapper } from '../wrapper/SearchBarWrapper';
-import searchListOfVideo from '../store/action';
+import { searchListOfVideo } from '../store/action';
 import searchIcon from '../assets/search.svg';
-import { Fetch } from 'react-request';
 
 let SearchBar = ({getVideos }) => {
     const [query, setQuery] = useState('');
