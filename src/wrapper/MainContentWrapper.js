@@ -53,14 +53,14 @@ export const MainContentWrapper = styled.div`
         .loading-img {
             width: 100px;
             height: 100px;
-            margin-top: calc(23%);
+            margin-top: calc(23vh);
             animation: spin_keyframes 0.7s infinite;
         }
         .error-img {
             height: 150px;
             width: 150px;
             margin-bottom: 10px;
-            margin-top: calc(23%);
+            margin-top: calc(23vh);
         }
         .error-msg {
             font-size: 25px;
