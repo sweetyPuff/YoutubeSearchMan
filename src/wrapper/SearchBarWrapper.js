@@ -50,7 +50,7 @@ export const SearchBarWrapper = styled.div`
     }
 
     img {
-        margin-top: 10px;
+        margin-top: 16px;
         cursor: pointer;
     }
 

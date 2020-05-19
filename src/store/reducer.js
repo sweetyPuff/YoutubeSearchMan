@@ -1,11 +1,5 @@
 import config from '../config';
-
-const initialState = {
-    videoList: null,
-    loading: false,
-    errorMsg: '',
-    totalPage: 0
-}
+import initialState from './state';
 
 export default function todosReducer(state = initialState, action) {
     switch (action.type) {
