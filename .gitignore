@@ -403,4 +403,6 @@ ASALocalRun/
 # Local History for Visual Studio
 .localhistory/
 
-/pecopeco/pecopeco/out
+/public
+/dist
+/build
