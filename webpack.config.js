@@ -1,7 +1,6 @@
 const path = require('path');
 
 module.exports = {
-    mode: 'production',
     context: path.resolve(__dirname, 'src'), // 切到 src 目錄下
     entry: './index.js',
     output: {
@@ -30,9 +29,5 @@ module.exports = {
     },
     resolve: {
         extensions: ['*', '.js', '.jsx']
-    },
-    devServer: {
-        contentBase: './dist',
-        watchContentBase: true
-    },
+    }
 };
