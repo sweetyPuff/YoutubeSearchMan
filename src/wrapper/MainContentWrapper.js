@@ -38,7 +38,7 @@ export const MainContentWrapper = styled.div`
         }
     }
 
-    @media (max-width: 576px) {
+    @media (max-width: 568x) {
         .content-wrapper li {
             width: 90% ;
             margin: 2%;
@@ -92,7 +92,7 @@ export const MainContentWrapper = styled.div`
         }
     }
 
-    @media (max-width: 576px) {
+    @media (max-width: 568px) {
         .alert-msg-img-cotainer {
             .loading-img {
                 width: 60px ;

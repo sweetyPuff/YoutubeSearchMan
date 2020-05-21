@@ -46,7 +46,7 @@ export const SearchBarWrapper = styled.div`
         }
     }
 
-    @media (max-width: 576px) {
+    @media (max-width: 568px) {
         input {
             font-size:16px ;
         }

@@ -45,7 +45,7 @@ export const PaginationWrapper = styled.div`
         padding: 4px 12px;
     }
 
-    @media (max-width: 576px) {
+    @media (max-width: 568px) {
         margin-top: 10%;
         .page-link {
             font-size: 18px ;
